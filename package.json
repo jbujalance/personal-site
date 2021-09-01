@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "bulma": "^0.9.3",
     "next": "11.1.2",
     "react": "17.0.2",

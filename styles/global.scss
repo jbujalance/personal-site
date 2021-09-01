@@ -1,2 +1,6 @@
 /*** Bulma ***/
 @import 'bulma/bulma';  // TODO we should only import the Bulma elements that we actually use
+
+/*** Font Awesome icons ***/
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
