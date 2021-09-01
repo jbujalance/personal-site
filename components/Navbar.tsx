@@ -7,7 +7,7 @@ const Navbar = () => {
   };
   return (
     <nav
-      className="navbar is-primary"
+      className="navbar is-link is-fixed-top"
       role="navigation"
       aria-label="main navigation"
     >

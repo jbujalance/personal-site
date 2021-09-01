@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
+import Hero from '../components/Hero';
 
 /**
  * This is the landing page.
@@ -9,7 +8,7 @@ import Image from 'next/image';
 const Home: NextPage = () => {
   return (
     <div>
-      Test
+      <Hero/>
     </div>
   );
 };
