@@ -14,12 +14,12 @@ const About = () => (
         </p>
         <div className="field is-grouped" id="social-media">
           <div className="control">
-            <a href="https://www.linkedin.com/in/josebujalancemartin" target="_blank" className="button is-light is-large">
+            <a href="https://www.linkedin.com/in/josebujalancemartin" target="_blank" rel="noreferrer" className="button is-light is-large">
               <i className="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </div>
           <div className="control">
-            <a href="https://github.com/jbujalance" target="_blank" className="button is-light is-large">
+            <a href="https://github.com/jbujalance" target="_blank" rel="noreferrer" className="button is-light is-large">
               <i className="fab fa-github" aria-hidden="true"></i>
             </a>
           </div>
