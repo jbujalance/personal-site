@@ -1,3 +1,5 @@
+import SocialMediaLinks from './SocialMediaLinks';
+
 export const ABOUT_SECTION_ID = 'about';
 
 const About = () => (
@@ -12,18 +14,7 @@ const About = () => (
           I am always interested on the new trends and technologies, and I try to keep up to date.
           Experienced in Java, I value the clarity, legibility and maintainability of the codebase.
         </p>
-        <div className="field is-grouped" id="social-media">
-          <div className="control">
-            <a href="https://www.linkedin.com/in/josebujalancemartin" target="_blank" rel="noreferrer" className="button is-light is-large">
-              <i className="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </div>
-          <div className="control">
-            <a href="https://github.com/jbujalance" target="_blank" rel="noreferrer" className="button is-light is-large">
-              <i className="fab fa-github" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
+        <SocialMediaLinks/>
       </div>
     </div>
   </section>
