@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { ABOUT_SECTION_ID } from './About';
 
 const Navbar = () => {
   const toggleBurguer = (event: MouseEvent) => {
@@ -29,7 +30,7 @@ const Navbar = () => {
 
       <div id="navbarmenu" className="navbar-menu">
         <div className="navbar-end">
-          <a className="navbar-item" href="#about">
+          <a className="navbar-item" href={`#${ABOUT_SECTION_ID}`}>
             <span className="icon">
               <i className="fas fa-info"></i>
             </span>

@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import About from '../components/About';
 import Hero from '../components/Hero';
 
 /**
@@ -7,9 +8,10 @@ import Hero from '../components/Hero';
  */
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Hero/>
-    </div>
+      <About/>
+    </>
   );
 };
 
