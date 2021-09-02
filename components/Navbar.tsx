@@ -2,10 +2,12 @@ import { MouseEvent } from 'react';
 import { ABOUT_SECTION_ID } from './About';
 
 const Navbar = () => {
+
   const toggleBurguer = (event: MouseEvent) => {
     document.querySelector('#burger')?.classList.toggle('is-active');
     document.querySelector('#navbarmenu')?.classList.toggle('is-active');
   };
+
   return (
     <nav
       className="navbar is-link is-fixed-top"
@@ -17,7 +19,7 @@ const Navbar = () => {
           id="burger"
           onClick={toggleBurguer}
           role="button"
-          className="navbar-burger burger"
+          className="navbar-burger"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarmenu"
@@ -30,7 +32,7 @@ const Navbar = () => {
 
       <div id="navbarmenu" className="navbar-menu">
         <div className="navbar-end">
-          <a className="navbar-item" href={`#${ABOUT_SECTION_ID}`}>
+          <a className="navbar-item" href={`#${ABOUT_SECTION_ID}`} onClick={toggleBurguer}>
             <span className="icon">
               <i className="fas fa-info"></i>
             </span>
