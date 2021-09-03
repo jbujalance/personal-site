@@ -1,4 +1,5 @@
-import Card from './project/ProjectCard';
+import ProjectCard from './project/ProjectCard';
+import ProjectCardGrid from './project/ProjectCardGrid';
 import Section from './Section';
 
 export const PROJECTS_SECTION_ID = 'projects';
@@ -9,7 +10,7 @@ const Projects = () => (
       These are some of the personal projects I have worked on for fun and to experiment with technologies
       that I don&apos;t often use in my professional environment.
     </div>
-    <Card/>
+    <ProjectCardGrid/>
   </Section>
 );
 

@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-const Card = () => (
+const ProjectCard = () => (
   <div className="card">
     <div className="card-image">
-      <figure className="image is-16by9">
+      <figure className="image">
         <Image
           src="/img/1280x960.png"
           alt="Placeholder image"
@@ -21,4 +21,4 @@ const Card = () => (
   </div>
 );
 
-export default Card;
+export default ProjectCard;

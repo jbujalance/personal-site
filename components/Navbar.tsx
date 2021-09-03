@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="navbar is-link"
+      className="navbar is-primary"
       role="navigation"
       aria-label="main navigation"
     >

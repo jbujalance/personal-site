@@ -1,4 +1,10 @@
+@charset "utf-8";
+
 /*** Bulma ***/
+$purple-blue: #485fc7;
+
+$primary: $purple-blue;
+
 @import 'bulma/bulma';  // TODO we should only import the Bulma elements that we actually use
 
 /*** Font Awesome icons ***/
