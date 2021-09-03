@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import ProjectDetailHero from '../../components/project-detail/ProjectDetailHero';
-import ProjectDetailLayout from '../../components/project-detail/ProjectLayout';
+import ProjectDetailHero from '../../components/project/ProjectDetailHero';
+import ProjectDetailLayout from '../../components/project/ProjectDetailLayout';
 import { getAllProjectIds, getProjectData, ProjectData } from '../../lib/projects';
 
 type Props = ProjectData;

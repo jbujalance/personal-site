@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './project/ProjectCard';
 import Section from './Section';
 
 export const PROJECTS_SECTION_ID = 'projects';
