@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import About from '../components/About';
 import Hero from '../components/Hero';
+import Layout from '../components/Layout';
+import Projects from '../components/Projects';
 
 /**
  * This is the landing page.
@@ -8,10 +10,11 @@ import Hero from '../components/Hero';
  */
 const Home: NextPage = () => {
   return (
-    <>
+    <Layout>
       <Hero/>
       <About/>
-    </>
+      <Projects/>
+    </Layout>
   );
 };
 

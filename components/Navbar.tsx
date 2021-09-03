@@ -1,5 +1,6 @@
 import { MouseEvent } from 'react';
 import { ABOUT_SECTION_ID } from './About';
+import { PROJECTS_SECTION_ID } from './Projects';
 
 const Navbar = () => {
 
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="navbar is-link is-fixed-top"
+      className="navbar is-link"
       role="navigation"
       aria-label="main navigation"
     >
@@ -37,6 +38,12 @@ const Navbar = () => {
               <i className="fas fa-info"></i>
             </span>
             <span>About</span>
+          </a>
+          <a className="navbar-item" href={`#${PROJECTS_SECTION_ID}`} onClick={toggleBurguer}>
+            <span className="icon">
+              <i className="fas fa-code"></i>
+            </span>
+            <span>Projects</span>
           </a>
         </div>
       </div>
