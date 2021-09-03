@@ -41,5 +41,5 @@ export function getProjectData(id: string): ProjectData {
   return {
     id,
     metadata: matterResult.data as ProjectMetadata
-  }
+  };
 }

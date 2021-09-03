@@ -22,18 +22,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths,
     fallback: false
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const projectId = context.params?.projectId;
   if (!projectId) {
-    throw Error("Missing parameter 'projectId'");
+    throw Error('Missing parameter \'projectId\'');
   }
   const projectData = getProjectData(projectId as string);
   return {
     props: {
       ...projectData
     }
-  }
-}
+  };
+};
