@@ -8,7 +8,7 @@ const About = () => (
   <Section id={ABOUT_SECTION_ID} title="About me">
     <div className="columns">
       <div className="column is-one-fifth">
-        <figure className="image is-shadowed">
+        <figure className="block image is-shadowed">
           <Image
             src="/img/profile.jpg"
             alt="Profile"
@@ -17,6 +17,9 @@ const About = () => (
             layout="responsive"
           />
         </figure>
+        <div className="block has-text-centered is-italic is-size-7">
+          <span>Yes, I am the one on the left !</span>
+        </div>
       </div>
       <div className="column">
         <div className="content">
