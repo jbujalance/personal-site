@@ -46,3 +46,22 @@ export function getProjectData(id: string): ProjectData {
     }
   };
 }
+
+export function getAllProjectsData(): ProjectData[] {
+  const fileNames = fs.readdirSync(projectsContentDirectory);
+  const fileContents = fileNames.map(fileName => ({
+    id: fileName.replace(/\.md$/, ''),
+    content: fs.readFileSync(path.join(projectsContentDirectory, fileName), 'utf8')
+  }));
+  const matters = fileContents.map(fileContentHolder => ({
+    id: fileContentHolder.id,
+    matter: matter(fileContentHolder.content)
+  }));
+  return matters.map(matterHolder => ({
+    id: matterHolder.id,
+    metadata: {
+      title: matterHolder.matter.data.title,
+      subtitle: matterHolder.matter.data.subtitle
+    }
+  }));
+}

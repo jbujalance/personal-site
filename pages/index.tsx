@@ -3,6 +3,7 @@ import About from '../components/About';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Projects, { ProjectsProps } from '../components/Projects';
+import { getAllProjectsData } from '../lib/projects';
 
 type Props = ProjectsProps;
 
@@ -21,35 +22,15 @@ export default function Home(props: Props) {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  // TODO load from markdown files
+  const projectsData = getAllProjectsData();
   return {
     props: {
-      projects: [
-        {
-          title: "WebIR",
-          description: "An HTTP interface to an infra-red (IR) actuator",
-          image: "/img/1280x960.png",
-          link:"/projects/webir"
-        },
-        {
-          title: "WebIR",
-          description: "An HTTP interface to an infra-red (IR) actuator",
-          image: "/img/1280x960.png",
-          link:"/projects/webir"
-        },
-        {
-          title: "WebIR",
-          description: "An HTTP interface to an infra-red (IR) actuator",
-          image: "/img/1280x960.png",
-          link:"/projects/webir"
-        },
-        {
-          title: "WebIR",
-          description: "An HTTP interface to an infra-red (IR) actuator",
-          image: "/img/1280x960.png",
-          link:"/projects/webir"
-        }
-      ]
+      projects: projectsData.map(projectData => ({
+        title: projectData.metadata.title,
+        description: projectData.metadata.subtitle,
+        image: `/img/projects/${projectData.id}.png`,  // TODO png or jpg ?
+        link: `/projects/${projectData.id}`
+      }))
     }
   };
 };

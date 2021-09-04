@@ -1,3 +1,9 @@
+/**
+ * Divides the given array into groups of the given size.
+ * @param array Original array to be divided into chunks.
+ * @param chunkSize The size of the groups.
+ * @returns An array holding the groups of elements.
+ */
 export function chunk<T>(array: T[], chunkSize: number): T[][] {
   return Array.from({ length: Math.ceil(array.length / chunkSize) }, (v, i) => array.slice(i * chunkSize, i * chunkSize + chunkSize));
 }
