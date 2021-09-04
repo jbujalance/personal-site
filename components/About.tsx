@@ -18,7 +18,7 @@ const About = () => (
           />
         </figure>
         <div className="block has-text-centered is-italic is-size-7">
-          <span>Yes, I am the one on the left !</span>
+          <span>Me and my friend</span>
         </div>
       </div>
       <div className="column">

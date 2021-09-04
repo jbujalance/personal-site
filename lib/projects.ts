@@ -40,6 +40,9 @@ export function getProjectData(id: string): ProjectData {
   // Combine the data with the id
   return {
     id,
-    metadata: matterResult.data as ProjectMetadata
+    metadata: {
+      title: matterResult.data.title,
+      subtitle: matterResult.data.subtitle
+    }
   };
 }
