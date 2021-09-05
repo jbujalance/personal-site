@@ -17,7 +17,12 @@ export function getAllProjectIds(): Array<string> {
 
 type ProjectMetadata = {
   title: string,
-  subtitle: string
+  subtitle: string,
+  techStack: {
+    languages: string[],
+    frameworks: string[],
+    platforms: string[]
+  }
 }
 
 export type ProjectData = {
@@ -39,14 +44,7 @@ export async function getProjectData(id: string): Promise<ProjectData> {
   const matterResult = matter(fileContents);
 
   // Combine the data with the id
-  return {
-    id,
-    html: matterResult.content,
-    metadata: {
-      title: matterResult.data.title,
-      subtitle: matterResult.data.subtitle
-    }
-  };
+  return _frontMatterToProjectData(id, matterResult);
 }
 
 export function getAllProjectsData(): ProjectData[] {
@@ -59,12 +57,21 @@ export function getAllProjectsData(): ProjectData[] {
     id: fileContentHolder.id,
     matter: matter(fileContentHolder.content)
   }));
-  return matters.map(matterHolder => ({
-    id: matterHolder.id,
-    html: "",
+  return matters.map(matterHolder => _frontMatterToProjectData(matterHolder.id, matterHolder.matter));
+}
+
+function _frontMatterToProjectData(id: string, matter: any): ProjectData {
+  return {
+    id,
+    html: matter.content,
     metadata: {
-      title: matterHolder.matter.data.title,
-      subtitle: matterHolder.matter.data.subtitle
+      title: matter.data.title,
+      subtitle: matter.data.subtitle,
+      techStack: {
+        languages: matter.data.techStack?.languages,
+        frameworks: matter.data.techStack?.frameworks,
+        platforms: matter.data.techStack?.platforms,
+      }
     }
-  }));
+  };
 }

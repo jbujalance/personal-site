@@ -19,7 +19,11 @@ export default function ProjectDetail(props: Props) {
       />
 
       <Section id="tech-stack">
-        <TechStack languages={["Javascript"]} frameworks={["Node", "LoL"]} platforms={["Something"]} />
+        <TechStack
+          languages={props.metadata.techStack.languages}
+          frameworks={props.metadata.techStack.frameworks}
+          platforms={props.metadata.techStack.platforms}
+        />
       </Section>
 
       <ProjectDetailHtmlSection htmlContent={props.html} />
