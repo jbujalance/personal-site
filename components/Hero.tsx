@@ -1,5 +1,5 @@
 const Hero = () => (
-  <section className="hero is-primary is-fullheight">
+  <section className="hero is-primary is-fullheight-with-navbar">
     <div className="hero-body">
       <div className="container">
         <h2 className="subtitle is-5 mb-6">
