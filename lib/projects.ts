@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 // Directory containing the project contents as markdown
 const projectsContentDirectory = path.join(process.cwd(), 'content/projects');
@@ -22,6 +24,7 @@ type ProjectMetadata = {
 
 export type ProjectData = {
   id: string,
+  html: string,
   metadata: ProjectMetadata
 }
 
@@ -30,16 +33,23 @@ export type ProjectData = {
  * @param id The id of the project whose data is to be retrieve.
  * @returns Returns an object holding the project ID, data and metadata.
  */
-export function getProjectData(id: string): ProjectData {
+export async function getProjectData(id: string): Promise<ProjectData> {
   const fullPath = path.join(projectsContentDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the project metadata section (front-matter)
   const matterResult = matter(fileContents);
 
+  // Use remark to convert markdown into HTML string
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent.toString();
+
   // Combine the data with the id
   return {
     id,
+    html: contentHtml,
     metadata: {
       title: matterResult.data.title,
       subtitle: matterResult.data.subtitle
@@ -59,6 +69,7 @@ export function getAllProjectsData(): ProjectData[] {
   }));
   return matters.map(matterHolder => ({
     id: matterHolder.id,
+    html: "",
     metadata: {
       title: matterHolder.matter.data.title,
       subtitle: matterHolder.matter.data.subtitle

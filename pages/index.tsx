@@ -21,7 +21,7 @@ export default function Home(props: Props) {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = (context) => {
   const projectsData = getAllProjectsData();
   return {
     props: {

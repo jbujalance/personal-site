@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ProjectDetailHero from '../../components/project/ProjectDetailHero';
+import ProjectDetailHtmlSection from '../../components/project/ProjectDetailHtmlSection';
 import ProjectDetailLayout from '../../components/project/ProjectDetailLayout';
 import { getAllProjectIds, getProjectData, ProjectData } from '../../lib/projects';
 
@@ -12,11 +13,12 @@ export default function ProjectDetail(props: Props) {
         title={props.metadata.title}
         subtitle={props.metadata.subtitle}
       />
+      <ProjectDetailHtmlSection htmlContent={props.html} />
     </ProjectDetailLayout>
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
   const projectIds = getAllProjectIds();
   const paths = projectIds.map(id => ({ params: { projectId: id } }));
   return {
@@ -30,7 +32,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   if (!projectId) {
     throw Error('Missing parameter \'projectId\'');
   }
-  const projectData = getProjectData(projectId as string);
+  const projectData = await getProjectData(projectId as string);
   return {
     props: {
       ...projectData
