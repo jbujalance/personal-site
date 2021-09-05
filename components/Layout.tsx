@@ -11,6 +11,7 @@ const Layout = (props: Props) => (
 
     <Head>
       <title>José Bujalance</title>
+      <link rel="icon" href="favicon.svg"/>
     </Head>
 
     <header>
