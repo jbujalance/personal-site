@@ -1,4 +1,4 @@
-import TagsCard from "../TagsCard";
+import TagsCard from '../TagsCard';
 
 type Props = {
   languages: string[],

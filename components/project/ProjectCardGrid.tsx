@@ -1,5 +1,5 @@
-import { chunk, fillToMultiple } from "../../lib/array-utils";
-import ProjectCard, { ProjectCardProps } from "./ProjectCard";
+import { chunk, fillToMultiple } from '../../lib/array-utils';
+import ProjectCard, { ProjectCardProps } from './ProjectCard';
 
 export type ProjectcardGridProps = {
   projects: ProjectCardProps[]
@@ -32,6 +32,6 @@ const ProjectCardGrid = (props: ProjectcardGridProps) => {
       }
     </>
   );
-}
+};
 
 export default ProjectCardGrid;
