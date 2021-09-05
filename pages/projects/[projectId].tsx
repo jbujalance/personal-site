@@ -3,6 +3,8 @@ import Link from 'next/link';
 import ProjectDetailHero from '../../components/project/ProjectDetailHero';
 import ProjectDetailHtmlSection from '../../components/project/ProjectDetailHtmlSection';
 import ProjectDetailLayout from '../../components/project/ProjectDetailLayout';
+import TechStack from '../../components/project/TechStack';
+import Section from '../../components/Section';
 import { getAllProjectIds, getProjectData, ProjectData } from '../../lib/projects';
 
 type Props = ProjectData;
@@ -16,16 +18,18 @@ export default function ProjectDetail(props: Props) {
         subtitle={props.metadata.subtitle}
       />
 
+      <Section id="tech-stack">
+        <TechStack languages={["Javascript"]} frameworks={["Node", "LoL"]} platforms={["Something"]} />
+      </Section>
+
       <ProjectDetailHtmlSection htmlContent={props.html} />
 
-      <section className="section" id="back-home">
-        <div className="container">
-          <Link href="/#projects">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      </section>
-      
+      <Section id="back-home">
+        <Link href="/#projects">
+          <a>← Back to home</a>
+        </Link>
+      </Section>
+
     </ProjectDetailLayout>
   );
 }

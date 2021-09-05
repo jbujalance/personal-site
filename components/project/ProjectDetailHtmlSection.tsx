@@ -4,7 +4,7 @@ type Props = {
 
 export default function ProjectDetailHtmlSection(props: Props) {
   return (
-    <section className="section">
+    <section className="section" id="project-detail">
       <div className="container" dangerouslySetInnerHTML={{ __html: props.htmlContent }} />
     </section>
   );
