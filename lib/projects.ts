@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 
 // Directory containing the project contents as markdown
 const projectsContentDirectory = path.join(process.cwd(), 'content/projects');
@@ -14,7 +12,7 @@ const projectsContentDirectory = path.join(process.cwd(), 'content/projects');
  */
 export function getAllProjectIds(): Array<string> {
   const fileNames = fs.readdirSync(projectsContentDirectory);
-  return fileNames.map(fileName => fileName.replace(/\.md$/, ''));
+  return fileNames.map(fileName => fileName.replace(/\.html$/, ''));
 }
 
 type ProjectMetadata = {
@@ -34,22 +32,16 @@ export type ProjectData = {
  * @returns Returns an object holding the project ID, data and metadata.
  */
 export async function getProjectData(id: string): Promise<ProjectData> {
-  const fullPath = path.join(projectsContentDirectory, `${id}.md`);
+  const fullPath = path.join(projectsContentDirectory, `${id}.html`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the project metadata section (front-matter)
   const matterResult = matter(fileContents);
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
   // Combine the data with the id
   return {
     id,
-    html: contentHtml,
+    html: matterResult.content,
     metadata: {
       title: matterResult.data.title,
       subtitle: matterResult.data.subtitle
@@ -60,7 +52,7 @@ export async function getProjectData(id: string): Promise<ProjectData> {
 export function getAllProjectsData(): ProjectData[] {
   const fileNames = fs.readdirSync(projectsContentDirectory);
   const fileContents = fileNames.map(fileName => ({
-    id: fileName.replace(/\.md$/, ''),
+    id: fileName.replace(/\.html$/, ''),
     content: fs.readFileSync(path.join(projectsContentDirectory, fileName), 'utf8')
   }));
   const matters = fileContents.map(fileContentHolder => ({
