@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // Directory containing the project contents as markdown
-const projectsContentDirectory = path.join(process.cwd(), 'content/projects');
+const projectsContentDirectory = path.join(process.cwd(), '_content/projects');
 
 /**
  * Iterates over the projects content directory and return the filename of each markdown.
