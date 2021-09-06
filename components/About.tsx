@@ -28,7 +28,7 @@ const About = () => (
             Agile methodology. I am more attracted to the backend than the frontend, and I have had the
             opportunity to participate in every level of the development, from conception and architecture, to implementation and deployment.
             I am always interested on the new trends and technologies, and I try to keep up to date.
-            Experienced in Java, I value the clarity, legibility and maintainability of the codebase.
+            I love Java, and I value the clarity, legibility and maintainability of the codebase.
           </p>
           <SocialMediaLinks />
         </div>

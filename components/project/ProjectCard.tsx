@@ -15,8 +15,8 @@ const ProjectCard = (props: ProjectCardProps) => (
         <Image
           src={props.image}
           alt={props.title}
-          width={1280}
-          height={960}
+          width={480}
+          height={360}
         />
       </figure>
     </div>
