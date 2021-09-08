@@ -16,7 +16,7 @@ const LinkButtonsGroup = (props: Props) => (
   <div className="field is-grouped" id="social-media">
     { props.links.map(linkMetadata => 
       <div className="control" key={ linkMetadata.href }>
-        <a href={ linkMetadata.href } target="_blank" rel="noreferrer" className="button is-white">
+        <a href={ linkMetadata.href } target="_blank" rel="noopener noreferrer" className="button is-white">
           <i className={ linkMetadata.icon } aria-hidden="true"></i>
         </a>
       </div>) }

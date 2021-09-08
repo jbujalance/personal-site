@@ -17,4 +17,50 @@ techStack:
     - MongoDB Atlas
 ---
 
-<p>Loool</p>
+<p>
+  Some years ago, me and my friends used to have a fantasy football league on <a href="https://www.biwenger.com/" target="_blank" rel="noopener noreferrer">Biwenger</a>.
+  To spice things up, we decided that at the end of every gameweek, the last players in the standings had to deposit a small
+  payment into a common fund, so that at the end of the season we could all go together have dinner or spend that money somehow.
+</p>
+
+<p>
+  At the beginning, all these payments were registered in an Excel sheet. It was quite tedious, because someone (me) had to manually fill the
+  gameweek results and calculate the amount to pay for each player. After some iterations on this Excel sheet, going from fully manually
+  to partially automated with some VisualBasic scripts, I decided to program a tracker that would extract the results at the end of each
+  gameweek, calculate the amount to pay for each player, and save in a database.
+</p>
+
+<p>
+  The <a href="https://github.com/jbujalance/biwenger-transfers" target="_blank" rel="noopener noreferrer">backend</a> of Biwenger Companion
+  is a NodeJs/Express application that is responsible of extracting the data from the Biwenger API, which I had to reverse-engineer as it is not a public API,
+  and then treat and store that data in a MongoDB database. Over the time, I added some more functionality, such as tracking the league's market,
+  tracking each player's budget, etc.
+</p>
+
+<p>
+  In order to let my friends check the status of the common fund and how much each person had to pay, I made a
+  <a href="https://github.com/jbujalance/biwenger-companion-front" target="_blank" rel="noopener noreferrer">frontend</a> PWA application using Angular,
+  and set up a JWT authentication system so that only my friends could access the site, and so I could also perform authorization limitations
+  to some of the resources.
+</p>
+
+<p>
+  We used it a lot during a couple of years, and I had fun doing it, but it was my first project using Node and Angular and I think a lot of things could have
+  been done better.
+</p>
+
+<figure class="image is-shadowed">
+  <img src="/img/Biwenger_Companion-total-payments.png" alt="Biwenger Companion total payments">
+</figure>
+
+<figure class="image is-shadowed">
+  <img src="/img/Biwenger_Companion-gameweek-payments.png" alt="Biwenger Companion gameweek payments">
+</figure>
+
+<figure class="image is-shadowed">
+  <img src="/img/Biwenger_Companion-balances.png" alt="Biwenger Companion balances">
+</figure>
+
+<figure class="image is-shadowed">
+  <img src="/img/Biwenger_Companion-market.png" alt="Biwenger Companion market">
+</figure>
