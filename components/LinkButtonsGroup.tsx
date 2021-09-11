@@ -4,6 +4,8 @@ export type LinkButtonMetadata = {
 }
 
 type Props = {
+  fieldStyles?: string,
+  buttonColor?: string,
   links: LinkButtonMetadata[]
 }
 
@@ -13,10 +15,10 @@ type Props = {
  * @returns The JSX component.
  */
 const LinkButtonsGroup = (props: Props) => (
-  <div className="field is-grouped" id="social-media">
+  <div className={`field is-grouped ${props.fieldStyles}`} id="social-media">
     { props.links.map(linkMetadata => 
       <div className="control" key={ linkMetadata.href }>
-        <a href={ linkMetadata.href } target="_blank" rel="noopener noreferrer" className="button is-white">
+        <a href={ linkMetadata.href } target="_blank" rel="noopener noreferrer" className={`button ${props.buttonColor || 'is-white'}`}>
           <i className={ linkMetadata.icon } aria-hidden="true"/>
         </a>
       </div>) }

@@ -15,8 +15,13 @@ const linksMetadata: LinkButtonMetadata[] = [
   }
 ];
 
-const SocialMediaLinks = () => (
-  <LinkButtonsGroup links={linksMetadata}/>
+type Props = {
+  fieldStyles?: string,
+  buttonColor?: string
+}
+
+const SocialMediaLinks = (props: Props) => (
+  <LinkButtonsGroup links={linksMetadata} fieldStyles={props.fieldStyles} buttonColor={props.buttonColor}/>
 );
 
 export default SocialMediaLinks;
