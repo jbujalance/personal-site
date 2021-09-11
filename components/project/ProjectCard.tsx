@@ -22,7 +22,7 @@ const ProjectCard = (props: ProjectCardProps) => (
       </figure>
     </div>
     <div className="card-content">
-      <h1 className="title">{props.title}</h1>
+      <h3 className="title">{props.title}</h3>
       <div className="content">{props.description}</div>
     </div>
     <footer className="card-footer">

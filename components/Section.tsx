@@ -7,7 +7,7 @@ type Props = {
 const Section = (props: Props) => (
   <section className="section" id={props.id}>
     <div className="container">
-      { props.title ? <h1 className="title">{props.title}</h1> : null }
+      { props.title ? <h2 className="title">{props.title}</h2> : null }
       { props.children }
     </div>
   </section>
