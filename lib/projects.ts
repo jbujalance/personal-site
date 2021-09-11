@@ -73,7 +73,7 @@ function _frontMatterToProjectData(id: string, matter: any): ProjectData {
         frameworks: matter.data.techStack?.frameworks,
         platforms: matter.data.techStack?.platforms,
       },
-      sourceLink: matter.data.sourceLink
+      ...(matter.data.sourceLink && { sourceLink: matter.data.sourceLink })
     }
   };
 }
