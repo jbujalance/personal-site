@@ -4,7 +4,7 @@ type Props = {
 }
 
 const ProjectDetailHero = (props: Props) => (
-  <section className="hero is-primary is-medium">
+  <section className="hero is-primary is-medium is-bold">
     <div className="hero-body">
       <div className="container has-text-centered">
         <h1 className="title is-1">{props.title}</h1>

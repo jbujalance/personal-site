@@ -14,10 +14,6 @@ const Layout = (props: Props) => (
       <link rel="icon" href="favicon.svg"/>
     </Head>
 
-    <header>
-      <Navbar/>
-    </header>
-
     <main>
       { props.children }
     </main>

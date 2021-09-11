@@ -1,5 +1,10 @@
+import Navbar from "./Navbar";
+
 const Hero = () => (
-  <section className="hero is-primary is-fullheight-with-navbar">
+  <section className="hero is-primary is-fullheight is-bold">
+    <div className="hero-head">
+      <Navbar/>
+    </div>
     <div className="hero-body">
       <div className="container">
         <h2 className="subtitle is-5 mb-6">
