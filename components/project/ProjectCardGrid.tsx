@@ -11,7 +11,7 @@ const ProjectCardGrid = (props: ProjectcardGridProps) => {
   // Create column divs
   let columns = props.projects.map(project => 
     <div key={project.title} className="column">
-      <ProjectCard title={project.title} description={project.description} image={project.image} link={project.link} />
+      <ProjectCard title={project.title} description={project.description} image={project.image} link={project.link} sourceLink={project.sourceLink} />
     </div>
   );
 

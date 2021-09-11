@@ -22,7 +22,8 @@ type ProjectMetadata = {
     languages: string[],
     frameworks: string[],
     platforms: string[]
-  }
+  },
+  sourceLink?: string
 }
 
 export type ProjectData = {
@@ -71,7 +72,8 @@ function _frontMatterToProjectData(id: string, matter: any): ProjectData {
         languages: matter.data.techStack?.languages,
         frameworks: matter.data.techStack?.frameworks,
         platforms: matter.data.techStack?.platforms,
-      }
+      },
+      sourceLink: matter.data.sourceLink
     }
   };
 }

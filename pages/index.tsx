@@ -28,8 +28,9 @@ export const getStaticProps: GetStaticProps<Props> = (context) => {
       projects: projectsData.map(projectData => ({
         title: projectData.metadata.title,
         description: projectData.metadata.subtitle,
-        image: `/img/projects/${projectData.id}.png`,  // TODO png or jpg ?
-        link: `/projects/${projectData.id}`
+        image: `/img/projects/${projectData.id}.png`,
+        link: `/projects/${projectData.id}`,
+        ...(projectData.metadata.sourceLink && { sourceLink: projectData.metadata.sourceLink })
       }))
     }
   };

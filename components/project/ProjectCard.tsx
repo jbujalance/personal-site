@@ -5,7 +5,8 @@ export type ProjectCardProps = {
   title: string,
   description: string,
   image: string,
-  link: string
+  link: string,
+  sourceLink?: string
 }
 
 const ProjectCard = (props: ProjectCardProps) => (
@@ -28,6 +29,11 @@ const ProjectCard = (props: ProjectCardProps) => (
       <Link href={props.link}>
         <a className="card-footer-item">More details</a>
       </Link>
+      { props.sourceLink &&
+        <Link href={props.sourceLink}>
+          <a className="card-footer-item" target="_blank" rel="noopener noreferrer">Source</a>
+        </Link>
+      }
     </footer>
   </div>
 );
