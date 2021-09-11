@@ -11,4 +11,49 @@ techStack:
     - JVM
 ---
 
-<p>Loool</p>
+<p>
+  Back in 2017, I worked on the development of a <a href="https://wiki.openstreetmap.org/wiki/Routing" target="_blank" rel="noopener noreferrer">routing engine</a>
+  at <a href="https://en.praxedo.com/" target="_blank" rel="noopener noreferrer">Praxedo</a>. When working on a routing engine,
+  you mainly deal with times and distances. Java 8 introduced a great <a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html" target="_blank" rel="noopener noreferrer">Time API</a>
+  to allow clients to manipulate and operate with times. However, there is not such thing for the manipulation of distances, so I made Distance4J taking
+  inspiration from the <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html" target="_blank" rel="noopener noreferrer">Java Time Duration API</a>
+  and adapting it to distance and length units.
+</p>
+
+<p>
+  <a href="https://github.com/jbujalance/Distance4J" target="_blank" rel="noopener noreferrer">Distance4J</a> is a lightweight Java library
+  that provides an easy way to convert and apply arithmetic operations on distance measures.
+  The main purpose of Distance4J is to prevent common errors and annoying boilerplate when manipulating distances in different length units.
+  With Distance4J, the consumer of a distance is unit-agnostic. Each client can choose the length unit to use, without needing to adapt to the unit
+  in which the distance is provided with cunbersome conversions.
+</p>
+
+<p>
+  Instead of modelising a distance with a primitive magnitude with some implicit unit that is documented somewhere in the project,
+  Distance4J provides a unit-agnostic model.
+</p>
+
+<p>
+  A distance can be created with any of the available factory methods:
+<pre>
+Distance myDistance = Distance.of(12, LengthUnits.ImperialUS.YARD);
+Distance anotherDistance = Distance.ofMetres(10.15);
+</pre>
+</p>
+
+<p>
+  Once a distance is instantiated, the client can manipulate it without needing any knowledge on the unit that the provider used for the initial measure.
+  The client can manipulate the distance using the units it needs.
+<pre>
+Distance addition = myDistance.plus(50, LengthUnits.SI.DECIMETRE);
+Distance subtraction = myDistance.minus(anotherDistance);
+</pre>
+</p>
+
+<p>
+  Finally, when the client is done with the distance manipulation, the holded value can be retrieved in any unit:
+<pre>
+double feet = myDistance.to(LengthUnits.ImperialUS.FOOT);
+double metres = myDistance.toMetres();
+</pre>
+</p>

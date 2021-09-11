@@ -11,7 +11,7 @@ const ProjectDetailLayout = (props: Props) => (
 
     <Head>
       <title>{`José Bujalance | ${props.projectTitle}`}</title>
-      <link rel="icon" href="favicon.svg"/>
+      <link rel="icon" href="/favicon.svg"/>
     </Head>
 
     <main>
