@@ -16,4 +16,14 @@ techStack:
 sourceLink: https://github.com/jbujalance/webir-alexa
 ---
 
-<p>Loool</p>
+<p>
+  WebIR Alexa is an Amazon Alexa skill that connects to a <a href="/projects/webir">WebIR</a> server so that it can control any managed IR device.
+  I use it every day to control my kitchen TV, which is a small, old, not-smart-at-all TV. It is much more convenient to ask Alexa to turn on the TV
+  or change the channel while cooking, instead of having to stop whatever you are doing, clean your hands, and grab the remote.
+</p>
+
+<p>
+  The skill mainly uses the <a href="https://developer.amazon.com/en-US/docs/alexa/smarthome/build-smart-home-skills-for-entertainment-devices.html" target="_blank" rel="noopener noreferrer">Entertainment Device Skills API</a>,
+  so I didn't need to train a custom voice command model. It is hosted on an AWS Lambda function, and deployed automatically on every push to master
+  using the Github Actions.
+</p>
