@@ -15,4 +15,19 @@ techStack:
     - Raspberry Pi
 ---
 
-<p>Loool</p>
+<p>
+  In order to deploy and maintain every personal project I make, I have an <a href="https://www.ansible.com/" target="_blank" rel="noopener noreferrer">Ansible</a>
+  repository to manage my machines and deployments.
+</p>
+
+<p>
+  I currently have an inventory of 5 machines, counting AWS EC2 instances, Oracle Cloud computing instances, and Raspberry Pi boards.
+  Associated to these hosts, I have more than 10 Ansible roles made by me, and some others imported from Ansible Galaxy.
+  The roles I made go from very generic, like setting the SSH keys on the servers in order to log into them, or roles for SSL configuration;
+  to very specific, such as deploying a personal password manager using <a href="https://keeweb.info/" target="_blank" rel="noopener noreferrer">KeeWeb</a>
+  or installing and preconfiguring a Keycloak server.
+</p>
+
+<p>
+  I also set up a Vagrant environment in order to test the roles and the Ansible playbooks locally before executing them on the actual hosts.
+</p>
