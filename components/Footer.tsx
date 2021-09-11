@@ -1,4 +1,4 @@
-import SocialMediaLinks from "./SocialMediaLinks";
+import SocialMediaLinks from './SocialMediaLinks';
 
 const Footer = () => (
   <footer className="footer">
