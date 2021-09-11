@@ -17,7 +17,7 @@ const LinkButtonsGroup = (props: Props) => (
     { props.links.map(linkMetadata => 
       <div className="control" key={ linkMetadata.href }>
         <a href={ linkMetadata.href } target="_blank" rel="noopener noreferrer" className="button is-white">
-          <i className={ linkMetadata.icon } aria-hidden="true"></i>
+          <i className={ linkMetadata.icon } aria-hidden="true"/>
         </a>
       </div>) }
   </div>

@@ -8,6 +8,10 @@ const linksMetadata: LinkButtonMetadata[] = [
   {
     href: 'https://github.com/jbujalance',
     icon: 'fab fa-github fa-lg'
+  },
+  {
+    href: 'mailto:contact@jbujalance.com',
+    icon: 'fas fa-envelope fa-lg'
   }
 ];
 
