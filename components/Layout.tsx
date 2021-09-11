@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import HeadTag from './HeadTag';
 
 type Props = {
   children: React.ReactNode;
@@ -9,10 +8,7 @@ type Props = {
 const Layout = (props: Props) => (
   <>
 
-    <Head>
-      <title>José Bujalance</title>
-      <link rel="icon" href="favicon.svg"/>
-    </Head>
+    <HeadTag title="José Bujalance"/>
 
     <main>
       { props.children }

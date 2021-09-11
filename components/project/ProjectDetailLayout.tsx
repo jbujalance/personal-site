@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import Footer from '../Footer';
+import HeadTag from '../HeadTag';
 
 type Props = {
   projectTitle: string,
@@ -9,10 +9,7 @@ type Props = {
 const ProjectDetailLayout = (props: Props) => (
   <>
 
-    <Head>
-      <title>{`José Bujalance | ${props.projectTitle}`}</title>
-      <link rel="icon" href="/favicon.svg"/>
-    </Head>
+    <HeadTag title={`José Bujalance | ${props.projectTitle}`}/>
 
     <main>
       { props.children }
