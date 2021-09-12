@@ -18,8 +18,8 @@ const ProjectCardGrid = (props: ProjectcardGridProps) => {
   // We add empty columns to ensure we have a length multiple of 'numberOfColumns'
   columns = fillToMultiple(columns, numberOfColumns, (index) => <div key={`empty_${index}`} className="column"></div>);
 
-  // We divide the projects in groups of three columns
-  const columnGroups = chunk(columns, 3);
+  // We divide the projects in groups of 'numberOfColumns' columns
+  const columnGroups = chunk(columns, numberOfColumns);
   
   return (
     <>
