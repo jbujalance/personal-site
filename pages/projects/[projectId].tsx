@@ -18,7 +18,7 @@ export default function ProjectDetail(props: Props) {
         subtitle={props.metadata.subtitle}
       />
 
-      <Section id="tech-stack">
+      <Section id="tech-stack" style="has-background-light">
         <TechStack
           languages={props.metadata.techStack.languages}
           frameworks={props.metadata.techStack.frameworks}
