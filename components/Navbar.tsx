@@ -1,5 +1,6 @@
 import { MouseEvent } from 'react';
 import { ABOUT_SECTION_ID } from './About';
+import { EXPERIENCE_SECTION_ID } from './Experience';
 import { PROJECTS_SECTION_ID } from './Projects';
 
 const Navbar = () => {
@@ -44,6 +45,12 @@ const Navbar = () => {
               <i className="fas fa-code"></i>
             </span>
             <span>Projects</span>
+          </a>
+          <a className="navbar-item" href={`#${EXPERIENCE_SECTION_ID}`} onClick={toggleBurguer}>
+            <span className="icon">
+              <i className="fas fa-briefcase"></i>
+            </span>
+            <span>Experience</span>
           </a>
         </div>
       </div>

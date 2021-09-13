@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import About from '../components/About';
+import Experience from '../components/Experience';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Projects, { ProjectsProps } from '../components/Projects';
@@ -17,6 +18,7 @@ export default function Home(props: Props) {
       <Hero/>
       <About/>
       <Projects projects={props.projects}/>
+      <Experience/>
     </Layout>
   );
 };
